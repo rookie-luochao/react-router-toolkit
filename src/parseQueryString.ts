@@ -1,8 +1,8 @@
 import { startsWith } from "lodash-es";
 import { Dictionary, ParseQueryString, ParsedUrlQueryValue } from "./type";
 
-function parseQueryString<Str extends string>(queryString: Str): ParseQueryString<Str>;
-function parseQueryString(queryString: string) {
+export function parseQueryString<Str extends string>(queryString: Str): ParseQueryString<Str>;
+export function parseQueryString(queryString: string) {
   if (!queryString || !queryString.trim()) {
     return {};
   }
@@ -29,5 +29,3 @@ function parseQueryString(queryString: string) {
 
   return queryObj;
 }
-
-export default parseQueryString;

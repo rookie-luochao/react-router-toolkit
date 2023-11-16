@@ -2,7 +2,7 @@ import reduce from "lodash-es/reduce";
 import { Dictionary, ParsedUrlQueryValue } from "./type";
 
 // 将queryMap数据转换成queryString
-export default function toQueryString(queryObj: Dictionary<ParsedUrlQueryValue>) {
+export function toQueryString(queryObj: Dictionary<ParsedUrlQueryValue>) {
   if (!queryObj) return "";
 
   const keyValueString = reduce(

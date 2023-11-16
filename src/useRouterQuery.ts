@@ -1,10 +1,10 @@
 import { useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import parseQueryString from "./parseQueryString";
-import toQueryString from "./toQueryString";
+import { parseQueryString } from "./parseQueryString";
+import { toQueryString } from "./toQueryString";
 import { ParsedUrlQuery } from "./type";
 
-export function useRouterQuery<T extends ParsedUrlQuery>() {
+export default function useRouterQuery<T extends ParsedUrlQuery>() {
   const { search } = useLocation();
   const navigate = useNavigate();
   const queryState = useRef(parseQueryString(search) as T);
