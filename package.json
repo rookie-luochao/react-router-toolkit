@@ -1,0 +1,39 @@
+{
+  "name": "react-router-toolkit",
+  "version": "0.0.1",
+  "description": "some tool functions and hooks to react-router",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "rookie-luochao",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "query",
+    "search",
+    "router tool",
+    "react-router-tool"
+  ],
+  "homepage": "https://github.com/rookie-luochao/react-router-toolkit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rookie-luochao/react-router-toolkit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rookie-luochao/react-router-toolkit/issues"
+  },
+  "dependencies": {
+    "lodash-es": "^4.17.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.18.0"
+  },
+  "devDependencies": {
+    "@types/lodash-es": "^4.17.11",
+    "@types/react": "^18.2.37",
+    "typescript": "^5.2.2"
+  }
+}
