@@ -4,7 +4,7 @@ import { parseQueryString } from "./parseQueryString";
 import { toQueryString } from "./toQueryString";
 import { ParsedUrlQuery } from "./type";
 
-export default function useRouterQuery<T extends ParsedUrlQuery>() {
+export function useRouterQuery<T extends ParsedUrlQuery>() {
   const { search } = useLocation();
   const navigate = useNavigate();
   const queryState = useRef(parseQueryString(search) as T);
