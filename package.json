@@ -1,6 +1,6 @@
 {
   "name": "react-router-toolkit",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "some tool functions and hooks to react-router",
   "scripts": {
     "build": "tsc"
