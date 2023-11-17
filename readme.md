@@ -40,3 +40,24 @@ setRouterQuery((preState) => ({
   name: "lisi",
 }));
 ```
+
+### common interface
+
+##### Dictionary
+```js
+interface Dictionary<T> {
+  [key: string]: T;
+}
+```
+
+##### ParsedUrlQueryValue
+```js
+type ParsedUrlQueryValue = string | string[];
+```
+
+##### ParsedUrlQuery
+```js
+interface ParsedUrlQuery {
+  [key: string]: ParsedUrlQueryValue;
+}
+```
