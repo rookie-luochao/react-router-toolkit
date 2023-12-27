@@ -1,8 +1,8 @@
 import reduce from "lodash-es/reduce";
-import { Dictionary, ParsedUrlQueryValue } from "./type";
+import { ParsedUrlQuery } from "./type";
 
 // 将queryMap数据转换成queryString
-export function toQueryString(queryObj: Dictionary<ParsedUrlQueryValue>) {
+export function toQueryString(queryObj: ParsedUrlQuery) {
   if (!queryObj) return "";
 
   const keyValueString = reduce(
@@ -19,7 +19,7 @@ export function toQueryString(queryObj: Dictionary<ParsedUrlQueryValue>) {
           "",
         );
       } else {
-        keyValueString = `${key}=${value}`;
+        keyValueString = value ? `${key}=${value}` : "";
       }
 
       return pre ? `${pre}&${keyValueString}` : keyValueString;

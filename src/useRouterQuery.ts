@@ -2,9 +2,9 @@ import { useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { parseQueryString } from "./parseQueryString";
 import { toQueryString } from "./toQueryString";
-import { ParsedUrlQuery } from "./type";
+import { ParsedUrlQuery, PartialParsedUrlQuery } from "./type";
 
-export function useRouterQuery<T extends ParsedUrlQuery>() {
+export function useRouterQuery<T extends PartialParsedUrlQuery>() {
   const { search } = useLocation();
   const navigate = useNavigate();
   const queryState = useRef(parseQueryString(search) as T);
@@ -13,7 +13,7 @@ export function useRouterQuery<T extends ParsedUrlQuery>() {
     const nextQuery = handler(queryState.current);
     queryState.current = nextQuery;
 
-    navigate(toQueryString(nextQuery), {
+    navigate(toQueryString(nextQuery as ParsedUrlQuery), {
       replace: true,
     });
   };

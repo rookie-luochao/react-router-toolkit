@@ -6,6 +6,7 @@ export function parseQueryString(queryString: string) {
   if (!queryString || !queryString.trim()) {
     return {};
   }
+
   if (startsWith(queryString, "?")) {
     queryString = queryString.slice(1);
   }
@@ -14,7 +15,7 @@ export function parseQueryString(queryString: string) {
   const items = queryString.split("&");
 
   items.forEach((item) => {
-    const [key, value] = item.split("=");
+    const [key, value = ""] = item.split("=");
 
     if (queryObj[key]) {
       if (Array.isArray(queryObj[key])) {
