@@ -22,7 +22,7 @@ export function toQueryString(queryObj: ParsedUrlQuery) {
         keyValueString = value ? `${key}=${value}` : "";
       }
 
-      return pre ? `${pre}&${keyValueString}` : keyValueString;
+      return pre ? `${pre}${keyValueString ? `&${keyValueString}` : ""}` : keyValueString;
     },
     "",
   );
