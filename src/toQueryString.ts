@@ -26,6 +26,6 @@ export function toQueryString(queryObj: ParsedUrlQuery) {
     },
     "",
   );
-
-  return `?${keyValueString}`;
+ 
+  return keyValueString ? `?${keyValueString}` : "";
 }

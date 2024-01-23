@@ -1,4 +1,4 @@
-import { startsWith } from "lodash-es";
+import startsWith from "lodash-es/startsWith";
 import { Dictionary, ParseQueryString, ParsedUrlQueryValue } from "./type";
 
 export function parseQueryString<Str extends string>(queryString: Str): ParseQueryString<Str>;
