@@ -14,12 +14,13 @@ export function toQueryString(queryObj: ParsedUrlQuery) {
         keyValueString = reduce(
           value,
           (cPre, item) => {
-            return cPre ? `${cPre}&${key}=${item}` : `${key}=${item}`;
+            item = (!!item || String(item) === "0") ? `${key}=${item}` : "";
+            return cPre ? `${cPre}${item ? `&${item}` : ""}` : item;
           },
           "",
         );
       } else {
-        keyValueString = value ? `${key}=${value}` : "";
+        keyValueString = (!!value || String(value) === "0") ? `${key}=${value}` : "";
       }
 
       return pre ? `${pre}${keyValueString ? `&${keyValueString}` : ""}` : keyValueString;
