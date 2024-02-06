@@ -1,8 +1,8 @@
-import startsWith from "lodash-es/startsWith";
+import startsWith from "lodash-es/startsWith.js";
 import { Dictionary, ParseQueryString, ParsedUrlQueryValue } from "./type";
 
-export function parseQueryString<Str extends string>(queryString: Str): ParseQueryString<Str>;
-export function parseQueryString(queryString: string) {
+export function parseQueryString<Str extends string>(queryString: Str, isNotDecode?: boolean): ParseQueryString<Str>;
+export function parseQueryString(queryString: string, isNotDecode?: boolean) {
   if (!queryString || !queryString.trim()) {
     return {};
   }
@@ -19,12 +19,12 @@ export function parseQueryString(queryString: string) {
 
     if (queryObj[key]) {
       if (Array.isArray(queryObj[key])) {
-        (queryObj[key] as Array<string>).push(value);
+        (queryObj[key] as Array<string>).push(isNotDecode ? value : decodeURIComponent(value));
       } else {
-        queryObj[key] = [queryObj[key] as string, value];
+        queryObj[key] = [queryObj[key] as string, isNotDecode ? value : decodeURIComponent(value)];
       }
     } else {
-      queryObj[key] = value;
+      queryObj[key] = isNotDecode ? value : decodeURIComponent(value);
     }
   });
 
