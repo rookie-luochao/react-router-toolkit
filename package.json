@@ -1,9 +1,11 @@
 {
   "name": "react-router-toolkit",
   "version": "1.1.3",
+  "type": "module",
   "description": "some tool functions and hooks to react-router",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc --allowImportingTsExtensions false --noEmit false",
+    "test": "ts-node ./src/__test__/index.ts"
   },
   "author": "rookie-luochao",
   "license": "MIT",
@@ -34,6 +36,7 @@
   "devDependencies": {
     "@types/lodash-es": "^4.17.11",
     "@types/react": "^18.2.37",
+    "ts-node": "^10.9.2",
     "typescript": "^5.2.2"
   }
 }
